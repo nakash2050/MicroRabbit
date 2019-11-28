@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Domain.Core", "MicroRabbit.Domain.Core\MicroRabbit.Domain.Core.csproj", "{C1332A8E-D505-4357-8F79-0C63EAC0807C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Infra.Bus", "MicroRabbit.Infra.Bus\MicroRabbit.Infra.Bus.csproj", "{0DE57AF1-3D64-440C-BF7B-C5DBF9B7B499}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,8 +25,13 @@ Global
 		{C1332A8E-D505-4357-8F79-0C63EAC0807C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1332A8E-D505-4357-8F79-0C63EAC0807C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1332A8E-D505-4357-8F79-0C63EAC0807C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DE57AF1-3D64-440C-BF7B-C5DBF9B7B499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DE57AF1-3D64-440C-BF7B-C5DBF9B7B499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DE57AF1-3D64-440C-BF7B-C5DBF9B7B499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DE57AF1-3D64-440C-BF7B-C5DBF9B7B499}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{C1332A8E-D505-4357-8F79-0C63EAC0807C} = {B0490BA7-7B9F-47CC-9751-6F098F7DE60B}
+		{0DE57AF1-3D64-440C-BF7B-C5DBF9B7B499} = {902F5526-E4BB-4CBD-B44C-AE74CFFD7F8A}
 	EndGlobalSection
 EndGlobal
