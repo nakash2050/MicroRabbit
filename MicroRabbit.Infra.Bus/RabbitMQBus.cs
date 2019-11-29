@@ -35,19 +35,26 @@ namespace MicroRabbit.Infra.Bus
         {
             var factory = new ConnectionFactory() { HostName = "localhost" };
 
-            using (var connection = factory.CreateConnection())
+            try
             {
-                using (var channel = connection.CreateModel())
+                using (var connection = factory.CreateConnection())
                 {
-                    var eventName = @event.GetType().Name;
+                    using (var channel = connection.CreateModel())
+                    {
+                        var eventName = @event.GetType().Name;
 
-                    channel.QueueDeclare(eventName, false, false, false);
+                        channel.QueueDeclare(eventName, false, false, false);
 
-                    var message = JsonConvert.SerializeObject(@event);
-                    var body = Encoding.UTF8.GetBytes(message);
+                        var message = JsonConvert.SerializeObject(@event);
+                        var body = Encoding.UTF8.GetBytes(message);
 
-                    channel.BasicPublish("", eventName, null, body);
+                        channel.BasicPublish("", eventName, null, body);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
@@ -111,13 +118,13 @@ namespace MicroRabbit.Infra.Bus
             }
             catch (Exception ex)
             {
-
+                Console.WriteLine(ex.Message);
             }
         }
 
         private async Task ProcessEvent(string eventName, string message)
         {
-            if(_handlers.ContainsKey(eventName))
+            if (_handlers.ContainsKey(eventName))
             {
                 var subscriptions = _handlers[eventName];
 
